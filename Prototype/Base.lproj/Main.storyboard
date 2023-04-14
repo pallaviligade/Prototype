@@ -10,7 +10,7 @@
         <!--My Feed-->
         <scene sceneID="O4q-Si-RoW">
             <objects>
-                <tableViewController id="sEs-bl-d31" sceneMemberID="viewController">
+                <tableViewController id="sEs-bl-d31" customClass="FeedViewController" customModule="Prototype" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="27Z-7W-Ws7">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                             <color key="backgroundColor" systemColor="systemBlueColor"/>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="e94-Z3-eKf">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedImageCell" rowHeight="580" id="e94-Z3-eKf" customClass="FeedImageCell" customModule="Prototype" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="66" width="393" height="580"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e94-Z3-eKf" id="h0H-ep-ZMz">
@@ -37,7 +37,7 @@
                                             <rect key="frame" x="20" y="17" width="353" height="546"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="U2d-ev-eb4" userLabel="Location Container">
-                                                    <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="58.333333333333336"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="58.333333333333336"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2DE-74-aEN" userLabel="Pin Container">
                                                             <rect key="frame" x="0.0" y="0.0" width="10" height="14"/>
@@ -57,10 +57,10 @@
                                                                 <constraint firstItem="tzR-bV-dr9" firstAttribute="leading" secondItem="2DE-74-aEN" secondAttribute="leading" id="mYM-a9-nUE"/>
                                                             </constraints>
                                                         </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBJ-gU-g8r">
-                                                            <rect key="frame" x="16" y="0.0" width="66.333333333333329" height="36"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="131.30000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="MBJ-gU-g8r">
+                                                            <rect key="frame" x="16" y="0.0" width="63" height="36"/>
                                                             <string key="text">Location,
-Locations</string>
+Location</string>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -101,8 +101,8 @@ Locations</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="U2d-ev-eb4" firstAttribute="width" secondItem="Xo9-GK-zTF" secondAttribute="width" multiplier="0.233239" id="3AD-xq-dza"/>
                                                 <constraint firstItem="ryf-3j-ecZ" firstAttribute="width" secondItem="Xo9-GK-zTF" secondAttribute="width" id="5U9-gm-TQc"/>
+                                                <constraint firstItem="U2d-ev-eb4" firstAttribute="width" secondItem="Xo9-GK-zTF" secondAttribute="width" multiplier="0.223796" id="W7R-GR-iDP"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
@@ -113,6 +113,12 @@ Locations</string>
                                         <constraint firstItem="Xo9-GK-zTF" firstAttribute="trailing" secondItem="h0H-ep-ZMz" secondAttribute="trailingMargin" id="mtn-Vx-P0j"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="discriptionLabel" destination="Omg-Jd-fM5" id="AwJ-gP-Jlz"/>
+                                    <outlet property="feedImageView" destination="Ack-mW-xDD" id="EDD-aT-V8e"/>
+                                    <outlet property="locationContainer" destination="U2d-ev-eb4" id="oaL-s7-yYo"/>
+                                    <outlet property="locationLabel" destination="MBJ-gU-g8r" id="pjf-PN-fFA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
