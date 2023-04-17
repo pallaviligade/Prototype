@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--My Feed-->
+        <!--My Story-->
         <scene sceneID="O4q-Si-RoW">
             <objects>
                 <tableViewController id="sEs-bl-d31" customClass="FeedViewController" customModule="Prototype" customModuleProvider="target" sceneMemberID="viewController">
@@ -109,6 +109,7 @@ Location, </string>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="discriptionLabel" destination="Omg-Jd-fM5" id="AwJ-gP-Jlz"/>
+                                    <outlet property="feedImageContainer" destination="ryf-3j-ecZ" id="u8z-dz-4kr"/>
                                     <outlet property="feedImageView" destination="Ack-mW-xDD" id="EDD-aT-V8e"/>
                                     <outlet property="locationContainer" destination="U2d-ev-eb4" id="oaL-s7-yYo"/>
                                     <outlet property="locationLabel" destination="MBJ-gU-g8r" id="pjf-PN-fFA"/>
@@ -120,8 +121,14 @@ Location, </string>
                             <outlet property="delegate" destination="sEs-bl-d31" id="Ujt-wc-Q05"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="My Feed" id="0G5-Ci-5eF"/>
+                    <navigationItem key="navigationItem" title="My Story" id="0G5-Ci-5eF"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="RSX-cT-KjY">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="sEs-bl-d31" eventType="valueChanged" id="5aO-ON-HYG"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wv0-yC-PfV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
